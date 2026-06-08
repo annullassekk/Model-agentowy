@@ -581,25 +581,6 @@ Citizen
   </div>
 </section>
 
-<section>
-  <h2>Pętla symulacji</h2>
-  <pre><code class="language-python">for month in range(600):              # 50 lat × 12 miesięcy
-    age_all()                         # +1 miesiąc
-    handle_deaths()                   # 3-fazowy model Coxa:
-       # a) akumulacja H_cum
-       # b) inicjacja choroby z P = 1 − exp(−Δh)
-       # c) mortality = base × cox_mult × MM
-    handle_births()                   # ASFR × FM × redukcja chorób
-    handle_household_splits()
-    update_health_states()
-    if month % 12 == 0:
-        collect_yearly_stats()        # piramida, populacja</code></pre>
-  <div class="stats">
-    <div class="stat"><span class="value">180 mln</span><span class="label">Operacji</span></div>
-    <div class="stat"><span class="value">~90 s</span><span class="label">Jedna symulacja (50 lat)</span></div>
-  </div>
-</section>
-
 </div>
 </div>
 
